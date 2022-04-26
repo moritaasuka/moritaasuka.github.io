@@ -1,93 +1,93 @@
-/* CSSコード */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  background: #fff;
+/****メニュー全体****/
+#menu{
+	/*配置*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 100;
 }
 
-.logo {
-  font-size: 24px;
+/****メニュー開閉ボタン****/
+#menu div{
+	/*デザイン*/
+	width: 30px;
+	height: 30px;
+	background: rgba(200,200,200,1);
+	/*配置*/
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
-/* ここから下がハンバーガーメニューに関するCSS */
-  
-/* チェックボックスを非表示にする */
-.drawer_hidden {
-  display: none;
+#menu .menuopen{
+	/*デザイン*/
+	color: rgba(255,255,255,1);
+	font-size: 20px;
+	/*配置*/
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	pointer-events: auto;
 }
 
-/* ハンバーガーアイコンの設置スペース */
-.drawer_open {
-  display: flex;
-  height: 60px;
-  width: 60px;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 100;/* 重なり順を一番上にする */
-  cursor: pointer;
+#menu .menuclose{
+	/*デザイン*/
+	color: rgba(255,255,255,1);
+	font-size: 20px;
+	/*配置*/
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	pointer-events: auto;
 }
 
-/* ハンバーガーメニューのアイコン */
-.drawer_open span,
-.drawer_open span:before,
-.drawer_open span:after {
-  content: '';
-  display: block;
-  height: 3px;
-  width: 25px;
-  border-radius: 3px;
-  background: #333;
-  transition: 0.5s;
-  position: absolute;
+/****メニュー一覧****/
+#menu ul{
+	/*アニメーション*/
+	-webkit-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+	/*デザイン*/
+	background: rgba(200,200,200,1);
+	width: 80%;
+	/*配置*/
+	position: absolute;
+	top: 30px;/*#menu divの高さ*/
+	left: -80%;/*#menu ul(メニュー一覧)の幅*/
 }
 
-/* 三本線の一番上の棒の位置調整 */
-.drawer_open span:before {
-  bottom: 8px;
+#menu li{
+	/*デザイン*/
+	padding: 10px;
+	color: rgba(0,0,0,1);
+	border-bottom: 1px rgba(255,255,255,1) solid;
+	/*配置*/
+	pointer-events: auto;
 }
 
-/* 三本線の一番下の棒の位置調整 */
-.drawer_open span:after {
-  top: 8px;
+/****メニューオープン時****/
+#menu:target .menuopen{
+	/*配置*/
+	display: none;
 }
 
-/* アイコンがクリックされたら真ん中の線を透明にする */
-#drawer_input:checked ~ .drawer_open span {
-  background: rgba(255, 255, 255, 0);
+#menu:target .menuclose{
+	/*配置*/
+	display: block;
 }
 
-/* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
-#drawer_input:checked ~ .drawer_open span::before {
-  bottom: 0;
-  transform: rotate(45deg);
+#menu:target ul{
+	/*配置*/
+	left: 0;
 }
 
-#drawer_input:checked ~ .drawer_open span::after {
-  top: 0;
-  transform: rotate(-45deg);
-}
-  
-/* メニューのデザイン*/
-.nav_content {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 100%; /* メニューを画面の外に飛ばす */
-  z-index: 99;
-  background: #fff;
-  transition: .5s;
-}
-
-/* メニュー黒ポチを消す */
-.nav_list {
-  list-style: none;
-}
-
-/* アイコンがクリックされたらメニューを表示 */
-#drawer_input:checked ~ .nav_content {
-  left: 0;/* メニューを画面に入れる */
-}
+/*** メインエフェクト ***/
