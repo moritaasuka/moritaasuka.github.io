@@ -1,356 +1,73 @@
-@import "bourbon";
-@import "neat";
+<input type="checkbox" id="menu" />
+<label for="menu" class="menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</label>
 
-$base-duration: 500ms;
+<nav class="nav">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Works</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
 
-// Colors
-$color-1: #444;
-$color-2: #3498db;
-$color-3: #2ecc71;
 
-// Breakpoints
-$sm: new-breakpoint(min-width 320px);
-$med: new-breakpoint(min-width 768px);
-$lg: new-breakpoint(min-width 1024px);
+<main>
+  <header>
+    <h1><i class="fa fa-picture-o" aria-hidden="true"></i></h1>
+  </header>
+  <section>
+    <div class="container">
+      <p>Busey ipsum dolor sit amet. You ever roasted doughnuts?I wrestled a bear once. A 750lbs black bear.The best way to communicate is compatible. Compatible communication is listening with open ears and an open mind, and not being fearful or judgemental about what you're hearing. It's OK to get Rib-grease on your face, because you're allowing people to see that you're proud of these ribs. Have you urinated? Have you drained your bladder? Are you free? Because if you haven't it will only come out later. I'm giving you some information that your bodily fluids may penetrate your clothing fibre's without warning. Did you feel that? Look at me - I'm not out of breath anymore!</p>
 
-*, *:before, *:after {
-  box-sizing: border-box;
-  outline: none;
-}
+      <p>When you get lost in your imaginatory vagueness, your foresight will become a nimble vagrant. It's OK to get Rib-grease on your face, because you're allowing people to see that you're proud of these ribs. Go with the feeling of the nature. Take it easy. Know why you're here. And remember to balance your internal energy with the environment.</p>
 
-body {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 16px;
-  font-smooth: auto;
-  font-weight: 300;
-  line-height: 1.75;
-  color: $color-1;
-  overflow-x: hidden;
-}
-
-.menu {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 50px;
-  height: 50px;
-  background-color: white;
-  border-radius: 50%;
-  //box-shadow: 0 0 20px rgba(black,0.2);
-  transition: transform 250ms ease;
-  cursor: pointer;
-  z-index: 200;
-  
-  span {
-    position: relative;
-    display: block;
-    width: 50%;
-    height: 2px;
-    background-color: $color-1;
-    float: left;
-    transform-origin: center center;
-    transition: transform 250ms ease;
-    z-index: 200;
-    
-    &:nth-of-type(1) {
-      transform: translateY(-5px);
-    }
-    
-    &:nth-of-type(3) {
-      transform: translateY(5px);
-    }
-  }
-}
-
-#menu {
-  display: none;
-  
-  &:checked ~ .menu {
-    background-color: transparent;
-    transform: rotate(360deg);
-    transition: transform 250ms ease;
-    
-    span {
-      background-color: white;
-      transition: transform 250ms ease;
+      <p>It's OK to get Rib-grease on your face, because you're allowing people to see that you're proud of these ribs. You gotta go through it to see there ain't nothing to it. The magic Indian is a mysterious spiritual force, and we're going to Cathedral Rock, and that's the vortex of the heart. These kind of things only happen for the first time once. I would like to give you a backstage pass to my imagination. When you get lost in your imaginatory vagueness, your foresight will become a nimble vagrant. It's OK to get Rib-grease on your face, because you're allowing people to see that you're proud of these ribs.</p>
+    </div>
+  </section>
+  <div class="img">
+    <h1><i class="fa fa-picture-o" aria-hidden="true"></i></h1>
+  </div>
+  <section>
+    <div class="container">
+      <p>Have you urinated? Have you drained your bladder? Are you free? Because if you haven't it will only come out later. I'm giving you some information that your bodily fluids may penetrate your clothing fibre's without warning. Did you feel that? Look at me - I'm not out of breath anymore! When you get lost in your imaginatory vagueness, your foresight will become a nimble vagrant. It's OK to get Rib-grease on your face, because you're allowing people to see that you're proud of these ribs. Go with the feeling of the nature. Take it easy. Know why you're here. And remember to balance your internal energy with the environment.</p>
       
-      &:nth-of-type(1) {
-        transform: translateY(1px) rotate(45deg);
-      }
-      
-      &:nth-of-type(2) {
-        display: none;
-      }
-      
-      &:nth-of-type(3) {
-        transform: translateY(-1px) rotate(-45deg);
-      }
-    }
-  }
-  
-  &:checked ~ .nav {
-    left: 0px;
-    transition: left $base-duration ease;
-  }
-  
-  &:checked ~ main {
-    transform: translateX(250px);
-    transition: transform $base-duration ease;
-  }
-}
+      <p>Busey ipsum dolor sit amet. You ever roasted doughnuts? I wrestled a bear once. A 750lbs black bear. The best way to communicate is compatible.</p>
 
-.nav {
-  position: fixed;
-  top: 0;
-  left: -210px;
-  width: 300px;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  background-color: $color-1;
-  transition: left $base-duration ease;
-  z-index: 0;
-  
-  ul {
-    position: relative;
-    list-style-type: none;
-    margin: 100px 0;
-    padding: 0;
-    
-    li {
-      position: relative;
-      display: block;
-      border-bottom: 5px solid rgba(white,1);
-      
-      a {
-        position: relative;
-        display: block;
-        margin: 0;
-        padding: 15px 20px;
-        color: white;
-        font-size: 14px;
-        font-weight: bold;
-        text-decoration: none;
-        text-transform: uppercase;
-        
-        &:before {
-          position: absolute;
-          content: '';
-          top: 0;
-          left: 0;
-          width: 0;
-          height: 100%;
-          transition: width 250ms ease;
-          z-index: -1;
-        }
-        
-        &:hover {
-          color: #444;
-          
-          &:before {
-            width: 100%;
-            height: 100%;
-            background-color: rgba(white,1);
-            transition: width 250ms ease;
-          }
-        }
-      }
-    }
-  }
-}
+      <p>It's OK to get Rib-grease on your face, because you're allowing people to see that you're proud of these ribs. You gotta go through it to see there ain't nothing to it. The magic Indian is a mysterious spiritual force, and we're going to Cathedral Rock, and that's the vortex of the heart. Compatible communication is listening with open ears and an open mind, and not being fearful or judgemental about what you're hearing. It's OK to get Rib-grease on your face, because you're allowing people to see that you're proud of these ribs.</p>
+    </div>
+  </section>
+  <footer>
+    <div class="logo">
+      <i class="fa fa-picture-o" aria-hidden="true"></i>
+    </div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Works</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
 
-.container {
-  width: 75%;
-  margin: 0 auto;
-}
+    <div class="secondary-links">
+      <ul>
+        <li><a href="#">Terms and Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
 
-main {
-  position: relative;
-  display: block;
-  width: 100%;
-  padding: 0;
-  box-shadow: 0 0 20px rgba(black,0.5);
-  transform: translateX(0px);
-  transition: transform $base-duration ease;
-  z-index: 0;
-    
-  header {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 300px;
-    background-color: whitesmoke;
-//    background-image: url('https://static.pexels.com/photos/110186/pexels-photo-110186.jpeg');
-//    background-position: center center;
-//    background-repeat: no-repeat;
-//    background-size: cover;
-    
-//    &:after {
-//      position: absolute;
-//      content: '';
-//      top: 0;
-//      left: 0;
-//      width: 100%;
-//      height: 100%;
-//      background-color: rgba(white,0.5);
-//      z-index: 0;
-//    }
-    
-    h1 {
-      color: #ccc;
-      z-index: 3;
-    }
-  }
-  
-  section {
-    position: relative;
-    display: block;
-    margin: 0;
-    padding: 50px 0;
-    background-color: white;
-    z-index: 100;
-    
-    p {
-      margin-bottom: 30px;
-    }
-  }
-  
-  .img {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 300px;
-    background-color: $color-1;
-    // background-image: url('https://static.pexels.com/photos/108023/pexels-photo-108023.jpeg');
-    // background-position: center center;
-    // background-repeat: no-repeat;
-    // background-size: cover;
-    
-    h1 {
-      color: rgba(white,0.2);
-    }
-  }
-  
-  footer {
-    @include clearfix;
-    position: relative;
-    display: block;
-    width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 20px 20px 20px;
-    background-color: $color-1;
-
-    .logo {
-      font-size: 28px;
-      color: whitesmoke;
-      line-height: 0;
-      margin-bottom: 8px;
-      margin-right: 4px;
-
-      @include media($lg) {
-        float: left;
-        margin-bottom: 0;
-      }
-    }
-
-    ul {
-      @include clearfix;
-      line-height: 1.5;
-      margin: 0 0 16px 0;
-      padding: 0;
-
-      @include media($lg) {
-        @include clearfix;
-        float: left;
-        line-height: 1.8;
-        margin-bottom: 0;
-        margin-left: 16px;
-      }
-      
-      li {
-        list-style: none;
-        padding-right: 16px;
-
-        @include media($lg) {
-          display: inline;
-          text-align: left;
-        }
-        
-        a {
-          color: rgba(white,0.7);
-          font-size: 14px;
-          font-weight: bold;
-          text-decoration: none;
-
-          &:focus,
-          &:hover {
-            color: rgba(white,1);
-          }
-        }
-      }
-    }
-
-    .secondary-links {
-      @include media($lg) {
-        float: right;
-      }
-
-      li {
-        
-        a {
-          font-size: 12px;
-          font-weight: 100 !important;
-        }
-      }
-
-      .social {
-        margin: 1em 0 0 0;
-
-        @include media($lg) {
-          float: right;
-          margin-top: 0;
-        }
-
-        li {
-          float: left;
-          font-size: 1em;
-          line-height: 0;
-          margin: 0;
-          padding-right: 0.7em;
-
-          &:last-child {
-            padding-right: 0;
-          }
-          
-          > a {
-            position: relative;
-            display: block;
-            width: 30px;
-            height: 30px;
-            background-color: rgba(white,0.7);
-            border-radius: 50%;
-            color: $color-1;
-            text-align: center;
-            line-height: 30px;
-            
-            &:hover {
-              background-color: rgba(white,1);
-            }
-          }
-        }
-      }
-    }
-  }
-}
+      <ul class="social">
+        <li><a href="#">
+          <i class="fa fa-github"></i>
+        </a></li>
+        <li><a href="#">
+          <i class="fa fa-twitter"></i>
+        </a></li>
+        <li><a href="#">
+          <i class="fa fa-codepen"></i>
+        </a></li>
+      </ul>
+    </div>
+  </footer>
+</main>
