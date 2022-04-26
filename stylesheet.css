@@ -1,93 +1,50 @@
-/****メニュー全体****/
-#menu{
-	/*配置*/
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	pointer-events: none;
-	z-index: 100;
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 80;
+    background-color: #3584bb;
 }
-
-/****メニュー開閉ボタン****/
-#menu div{
-	/*デザイン*/
-	width: 30px;
-	height: 30px;
-	background: rgba(200,200,200,1);
-	/*配置*/
-	overflow: hidden;
-	position: absolute;
-	top: 0;
-	left: 0;
+.menu-content ul {
+    padding: 70px 10px 0;
 }
-
-#menu .menuopen{
-	/*デザイン*/
-	color: rgba(255,255,255,1);
-	font-size: 20px;
-	/*配置*/
-	display: block;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	pointer-events: auto;
+.menu-content ul li {
+    border-bottom: solid 1px #ffffff;
+    list-style: none;
 }
-
-#menu .menuclose{
-	/*デザイン*/
-	color: rgba(255,255,255,1);
-	font-size: 20px;
-	/*配置*/
-	display: none;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	pointer-events: auto;
+.menu-content ul li a {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    box-sizing: border-box;
+    color:#ffffff;
+    text-decoration: none;
+    padding: 9px 15px 10px 0;
+    position: relative;
 }
-
-/****メニュー一覧****/
-#menu ul{
-	/*アニメーション*/
-	-webkit-transition: all 0.3s ease 0s;
-	transition: all 0.3s ease 0s;
-	/*デザイン*/
-	background: rgba(200,200,200,1);
-	width: 80%;
-	/*配置*/
-	position: absolute;
-	top: 30px;/*#menu divの高さ*/
-	left: -80%;/*#menu ul(メニュー一覧)の幅*/
+.menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #ffffff;
+    border-right: solid 2px #ffffff;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 11px;
+    top: 16px;
 }
-
-#menu li{
-	/*デザイン*/
-	padding: 10px;
-	color: rgba(0,0,0,1);
-	border-bottom: 1px rgba(255,255,255,1) solid;
-	/*配置*/
-	pointer-events: auto;
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;/*leftの値を変更してメニューを画面外へ*/
+    z-index: 80;
+    background-color: #3584bb;
+    transition: all 0.5s;/*アニメーション設定*/
 }
-
-/****メニューオープン時****/
-#menu:target .menuopen{
-	/*配置*/
-	display: none;
+#menu-btn-check:checked ~ .menu-content {
+    left: 0;/*メニューを画面内へ*/
 }
-
-#menu:target .menuclose{
-	/*配置*/
-	display: block;
-}
-
-#menu:target ul{
-	/*配置*/
-	left: 0;
-}
-
-/*** メインエフェクト ***/
